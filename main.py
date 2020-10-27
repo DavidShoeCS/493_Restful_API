@@ -6,22 +6,13 @@ import boat
 import load
 
 app = Flask(__name__)
+app.register_blueprint(boat.bp)
+app.register_blueprint(load.bp)
 client = datastore.Client()
 
 @app.route('/')
 def index():
     return "Please navigate to /boats to use this API"\
-
-
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
